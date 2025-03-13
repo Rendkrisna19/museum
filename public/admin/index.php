@@ -31,6 +31,7 @@ $totalUser = $resultUser->fetch_assoc()['total_user'];
     <title>Admin Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="font.css">
 </head>
 
 <body class="bg-gray-100 flex">

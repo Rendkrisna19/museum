@@ -33,25 +33,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Register - Museum</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="font.css">
 </head>
 
 <body class="flex justify-center items-center min-h-screen bg-gray-100">
-    <form method="POST" class="bg-white p-6 rounded-lg shadow-lg w-96">
+    <div class="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
+        <!-- Logo -->
+        <div class="flex justify-center mb-4">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.YSPZTWiohml25Doaqj4SlgHaHa&pid=Api&P=0&h=180" alt="Logo"
+                class="w-20 h-20">
+        </div>
+
+        <!-- Judul -->
         <h2 class="text-2xl font-bold text-center mb-4">Register</h2>
         <?php if (isset($error)) echo "<p class='text-red-500 text-sm'>$error</p>"; ?>
-        <input type="text" name="fullname" placeholder="Nama Lengkap" required class="w-full p-2 border rounded mb-2">
-        <input type="email" name="email" placeholder="Email" required class="w-full p-2 border rounded mb-2">
-        <input type="text" name="username" placeholder="Username" required class="w-full p-2 border rounded mb-2">
-        <input type="password" name="password" placeholder="Password" required class="w-full p-2 border rounded mb-2">
 
-        <!-- <select name="role" class="w-full p-2 border rounded mb-2">
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-        </select> -->
 
-        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Register</button>
-        <p class="text-sm mt-2">Sudah punya akun? <a href="login.php" class="text-blue-500">Login</a></p>
-    </form>
+        <!-- Formulir -->
+        <form method="POST">
+            <label class="block mb-2 font-semibold">Nama Lengkap:</label>
+            <input type="text" name="fullname" class="w-full p-2 border rounded mb-4"
+                placeholder="Masukkan Nama Lengkap" required>
+
+            <label class="block mb-2 font-semibold">Username:</label>
+            <input type="text" name="username" class="w-full p-2 border rounded mb-4" placeholder="Masukkan Username"
+                required>
+
+            <label class="block mb-2 font-semibold">Email:</label>
+            <input type="email" name="email" class="w-full p-2 border rounded mb-4" placeholder="Masukkan Email"
+                required>
+
+            <label class="block mb-2 font-semibold">Password:</label>
+            <input type="password" name="password" class="w-full p-2 border rounded mb-4"
+                placeholder="Masukkan Password" required>
+
+            <button type="submit"
+                class="w-full bg-orange-900 text-white py-2 rounded hover:bg-orange-600">Registrasi</button>
+        </form>
+
+        <!-- Link Login -->
+        <p class="text-center mt-4">Sudah punya akun?
+            <a href="login.php" class="text-blue-500 hover:underline">Login</a>
+        </p>
+    </div>
+
 </body>
 
 </html>

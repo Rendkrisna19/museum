@@ -38,19 +38,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Login - Museum</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="font.css">
 </head>
 
-<body class="flex justify-center items-center min-h-screen bg-gray-100">
-    <form method="POST" class="bg-white p-6 rounded-lg shadow-lg w-96">
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
+        <div class="flex justify-center mb-4">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.YSPZTWiohml25Doaqj4SlgHaHa&pid=Api&P=0&h=180" alt="Logo"
+                class="w-20 h-20">
+        </div>
         <h2 class="text-2xl font-bold text-center mb-4">Login</h2>
         <?php if (isset($error)) echo "<p class='text-red-500 text-sm'>$error</p>"; ?>
+        <form method="POST">
+            <label class="block mb-2">Username:</label>
+            <input type="text" name="username" class="w-full p-2 border rounded mb-4" placeholder="Masukkan Username"
+                required>
 
-        <input type="text" name="username" placeholder="Username" required class="w-full p-2 border rounded mb-2">
-        <input type="password" name="password" placeholder="Password" required class="w-full p-2 border rounded mb-2">
+            <label class="block mb-2">Password:</label>
+            <input type="password" name="password" class="w-full p-2 border rounded mb-4"
+                placeholder="Masukkan password" required>
 
-        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Login</button>
-        <p class="text-sm mt-2">Belum punya akun? <a href="register.php" class="text-blue-500">Register</a></p>
-    </form>
+            <button type="submit"
+                class="w-full bg-orange-900 text-white py-2 rounded hover:bg-orange-600">Login</button>
+        </form>
+        <p class="text-center mt-4">Belum punya akun? <a href="register.php" class="text-blue-500">Registrasi</a></p>
+    </div>
 </body>
 
 </html>
